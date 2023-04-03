@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""Contest-10 Problem #B --> Raising Bacteria"""
+
+
 def main() -> None:
     x = int(input())
 
@@ -7,5 +11,7 @@ def main() -> None:
             bacterias += 1
         x //= 2
     print(bacterias)
+
+
 if __name__ == '__main__':
     main()
