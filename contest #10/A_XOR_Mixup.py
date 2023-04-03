@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""Contest-10 Problem #A --> XOR Mixup"""
+
+
 def main() -> None:
     test_cases = int(input())
 
