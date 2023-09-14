@@ -1,25 +1,13 @@
-#!/usr/bin/python3
-"""Contest-10 Problem #A --> XOR Mixup"""
+from typing import List
 
 
-def main() -> None:
-    test_cases = int(input())
+def solve():
+    t = int(input())
 
-    for _ in range(test_cases):
+    for _ in range(t):
         n = int(input())
-        arr = list(map(int, input().split()))
+        a = list(map(int, input().split()))
 
-        for ind, elem in enumerate(arr):
-            changed = 0
-            for i in range(len(arr)):
-                if i != ind:
-                    changed ^= arr[i]
+        print(min(a))
 
-            if changed == arr[ind]:
-                print(arr[ind])
-                break
-
-
-
-if __name__ == '__main__':
-    main()
+solve()

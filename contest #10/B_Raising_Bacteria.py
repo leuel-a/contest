@@ -1,17 +1,15 @@
-#!/usr/bin/python3
-"""Contest-10 Problem #B --> Raising Bacteria"""
+"""Contest #10 Problem B --> Raising Bacteria"""
+from typing import List
 
 
-def main() -> None:
-    x = int(input())
+def solve():
+    n = int(input())
 
-    bacterias = 0
-    while x > 0:
-        if x % 2 != 0:
-            bacterias += 1
-        x //= 2
-    print(bacterias)
+    count = 0
+    bit_mask = 1
+    for i in range(n.bit_length()):
+        if n & (bit_mask << i) != 0:
+            count += 1
 
-
-if __name__ == '__main__':
-    main()
+    print(count)
+solve()

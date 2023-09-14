@@ -1,17 +1,19 @@
-#!/usr/bin/python3
-"""Contest-10 Problem #C --> Special Numbers"""
+"""Contest #10C --> Special Numbers"""
+from typing import List
 
 
-def main() -> None:
-    test_cases = int(input())
+def solve():
+    t = int(input())
 
-    for _ in range(test_cases):
+    for _ in range(t):
         n, k = map(int, input().split())
-        special_number = 0
-        for i in range(k.bit_length()):
-            if k & (1 << i) != 0:
-                special_number += n ** i
-        print(special_number % (10 ** 9 + 7))
 
-if __name__ == '__main__':
-    main()
+        result = 0
+        bit_str = list(map(int, str(bin(k)[2:])[::-1]))
+        for i in range(len(bit_str)):
+            result += (pow(n, i) * bit_str[i])
+        
+        print(result % (pow(10, 9) + 7))
+
+
+solve()
